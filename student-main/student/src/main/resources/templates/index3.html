@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department</title>
+
+    <style>
+         #department{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#department td, #department th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#department tr:nth-child(even){background-color: #f2f2f2;}
+
+#department tr:hover {background-color: orange;}
+
+#department th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+}
+
+    </style>
+</head>
+<body>
+
+<button onclick="goBack()">Go Back</button>
+<script>function goBack(){
+window.history.back();
+}
+</script>
+
+<h1 id="h1">Department RRD</h1>
+<div th:switch =${departments}>
+    <table id = "department">
+        <thead>
+        <tr>
+            <th>Department ID</th>
+            <th>Department Name</th>
+            <th>Department Strength</th>
+            <th>Department Location</th>
+            <th>Faculty FirstName</th>
+            <th>Faculty LastName</th>
+            <th>Subject Handling</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each ="department:${departments}">
+            <td th:text="${department.departmentId}"></td>
+            <td th:text="${department.departmentName}"></td>
+            <td th:text="${department.departmentStrength}"></td>
+            <td th:text="${department.departmentLocation}"></td>
+            <td th:text="${department.firstName}"></td>
+            <td th:text="${department.lastName}"></td>
+            <td th:text="${department.subjectHandling}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

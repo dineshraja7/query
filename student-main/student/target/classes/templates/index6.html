@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Subject</title>
+
+    <style>
+        #studentsubject{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#studentsubject td, #studentsubject th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#studentsubject tr:nth-child(even){background-color: #f2f2f2;}
+
+#studentsubject tr:hover {background-color: orange;}
+
+#studentsubject th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0985e3;
+  color: white;
+}
+
+#h1 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #9500ff;
+}
+
+    </style>
+</head>
+<body>
+
+<button onclick="goBack()">Go Back</button>
+<script>function goBack(){
+window.history.back();
+}
+</script>
+
+<h1 id="h1">Enrollment in RRD</h1>
+<div th:switch =${stu_subjects}>
+    <table id = "stu_subject">
+        <thead>
+        <tr>
+            <th>SubjectID</th>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Subject Name</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each ="stu_subject:${stu_subjects}">
+            <td th:text="${stu_subject.subjectId}"></td>
+            <td th:text="${stu_subject.studentId}"></td>
+            <td th:text="${stu_subject.firstName}"></td>
+            <td th:text="${stu_subject.subjectName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <meta charset="UTF-8">
+    <title>Subject</title>
+
+</head>
+<body>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body  style="background-image: url('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg');">
+
+
+<nav>
+    <ul>
+        <img src="https://i.pinimg.com/736x/59/bc/37/59bc37ef1fb77cd87db0530ee87085c3.jpg"width="100"height="80">
+
+    </ul>
+</nav>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+html {
+  font-family:Snell Roundhand, cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+th, td {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+
+</style>
+        <h1 id="h1">Student Info</h1>
+
+
+        <div> <label><b>Student First Name:</b></label> <label th:text=${studentInfo.firstName}></label></div>
+        <div><label><b>Student Last Name:</b></label>  <label th:text=${studentInfo.lastName}></label></div>
+        <div> <label><b>Age:</b></label>  <label th:text=${studentInfo.age}></label></div>
+        <div><label><b>Class year:</b></label> <label th:text=${studentInfo.classYear}></label></div>
+<div><label><b>Subject ID:</b></label> <label th:text=${studentInfo.subjectId}></label></div>
+
+
+
+
+
+        <div th:switch =${studentInfo}>
+        <table id = "subject">
+
+        <thead>
+        <table style="width:1px; border: 1px solid black">
+        <h2>Subjects Enrolled</h2>
+        <th>SubjectId</th>
+        <th>SubjectName</th>
+
+
+
+    </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="subject:${studentInfo.stuSubjects}">
+             <td th:text="${subject.subjectId}"></td>
+            <p> <td th:text="${subject.subjectName}"></td></p>
+        </tr>
+        </tbody>
+        </table>
+</table>
+        </div>
+    </table>
+    </table>
+
+
+</table>
+</body>
+
+</html>
+</body>
+</html>
+
+
